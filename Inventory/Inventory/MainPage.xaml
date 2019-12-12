@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Inventory.MainPage"
+             Title="Page 1" 
+             IconImageSource="home11.png"
+             >
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Entry x:Name="MachineName" Placeholder="Machine Name"></Entry>
+            <Entry x:Name="MachineNumber" Placeholder="Machine Number"></Entry>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button x:Name="SaveBtn" Text="Save Machine" Clicked="SaveBtn_Clicked"></Button>
+                <Button x:Name="ShowAllDataBtn" Text="Show Data" Clicked="ShowAllDataBtn_Clicked"></Button>
+            </StackLayout>
+            <Label Text="Machine List" FontSize="Large" TextColor="DarkRed" HorizontalOptions="CenterAndExpand"></Label>
+            <ListView x:Name="DataList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<TextCell Text="{Binding Name}" Detail="{Binding Number}" ></TextCell>-->
+                        <ViewCell>
+                            <ViewCell.View>
+                                <!--<StackLayout HeightRequest="100">
+                                    <Label Text="{Binding Name}"></Label>
+                                    <Label Text="{Binding Number}"></Label>
+                                    --><!--<nanoXam:CircleButton HeightRequest="100" Text="{Binding Label}" ButtonTextColor="White" ButtonSize="4" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="3"></nanoXam:CircleButton>--><!--
+                                </StackLayout>-->
+                                <ScrollView>
+                                    <!--<nanoXam:CircleButton HeightRequest="100" Text="{Binding Label}" ButtonTextColor="White" ButtonSize="4" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="3"></nanoXam:CircleButton>-->
+                                    <!--<StackLayout HeightRequest="100" Orientation="Horizontal">
+                                    <Label Text="{Binding Name}" TextColor="Chocolate" FontSize="Medium" FontFamily="Arial" Margin="2,2,2,2"></Label>
+                                        <Label Text="{Binding Number}"  Margin="2,2,2,2"></Label>
+                                    </StackLayout>-->
+                                    <Grid>
+                                        <Grid.RowDefinitions >
+                                            <RowDefinition></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition ></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" TextColor="Chocolate" FontSize="Medium" FontFamily="Arial" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" ></Label>
+                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Number}" TextColor="Chocolate" FontSize="Medium" FontFamily="Arial" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                                        <Button Grid.Row="0" Grid.Column="3"  x:Name="EditMachine" Text="Edit" Clicked="EditMachine_Clicked" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"></Button>
+                                    </Grid>
+                                </ScrollView>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+
+
+
+
+
+
+
+
+
+
+    <!--Padding="20" Margin="5,100,5,5"-->
+    <!--<StackLayout x:Name="mainStack">
+        <StackLayout>
+            <Label Text="UserName"
+               TextColor="Black"></Label>
+            <Entry Text="" 
+               Placeholder="UserName"
+                  x:Name="Username"></Entry>
+            <Label Text="Password"
+               TextColor="Black"></Label>
+            <Entry Text="" 
+               Placeholder="Password" IsPassword="True"></Entry>
+
+            <Button Text="Login"
+                    Clicked="Login"
+            ></Button>
+
+            <Label Text="Not a member? Sign up now"
+               TextColor="Black"></Label>
+
+            <Label Text="Pick a Date" ></Label>
+            <DatePicker x:Name="dp" MaximumDate="2099/12/31" MinimumDate="1901/01/01" ></DatePicker>
+            <TimePicker x:Name="tp"></TimePicker>
+            <Picker x:Name="MyPicker">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Australia</x:String>
+                        <x:String>US</x:String>
+                        <x:String>UK</x:String>
+                        <x:String>Bhutan</x:String>
+                        <x:String>Maldives</x:String>
+                    </x:Array>
+
+                </Picker.ItemsSource>
+
+            </Picker>
+            <Button Text="Get date time"
+                    Clicked="DateTime"
+            ></Button>
+            <Label Text=""
+                   x:Name="DateTimeLabel"
+               TextColor="Black"></Label>
+
+        </StackLayout>
+    </StackLayout>-->
+    <!--<ContentPage Title="Page 2" IconImageSource="home11.png">
+        <ContentPage.Content>
+            <StackLayout>
+                <Label VerticalOptions="Center" HorizontalOptions="Center">
+                  Page 2  
+                </Label>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title="Page 3" IconImageSource="home21.png">
+        <ContentPage.Content>
+            <StackLayout>
+                <Label VerticalOptions="Center" HorizontalOptions="Center">
+                    Page 3
+                </Label>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>-->
+</ContentPage>
