@@ -7,15 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Inventory
+namespace Inventory.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NextPage : ContentPage
+    public partial class MasterPage : ContentView
     {
-        public NextPage(string username)
+        public MasterPage()
         {
             InitializeComponent();
-            LabelMain.Text = "Hello" + username;
         }
     }
 }

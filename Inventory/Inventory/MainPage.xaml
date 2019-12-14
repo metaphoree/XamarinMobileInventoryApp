@@ -1,63 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
+                  xmlns:local="clr-namespace:Inventory.Views"
+                  mc:Ignorable="d"
              x:Class="Inventory.MainPage"
              Title="Page 1" 
-             IconImageSource="home11.png"
              >
-    <ContentPage.Content>
-        <StackLayout Padding="20">
-            <Entry x:Name="MachineName" Placeholder="Machine Name"></Entry>
-            <Entry x:Name="MachineNumber" Placeholder="Machine Number"></Entry>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Button x:Name="SaveBtn" Text="Save Machine" Clicked="SaveBtn_Clicked"></Button>
-                <Button x:Name="ShowAllDataBtn" Text="Show Data" Clicked="ShowAllDataBtn_Clicked"></Button>
-            </StackLayout>
-            <Label Text="Machine List" FontSize="Large" TextColor="DarkRed" HorizontalOptions="CenterAndExpand"></Label>
-            <ListView x:Name="DataList">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <!--<TextCell Text="{Binding Name}" Detail="{Binding Number}" ></TextCell>-->
-                        <ViewCell>
-                            <ViewCell.View>
-                                <!--<StackLayout HeightRequest="100">
-                                    <Label Text="{Binding Name}"></Label>
-                                    <Label Text="{Binding Number}"></Label>
-                                    --><!--<nanoXam:CircleButton HeightRequest="100" Text="{Binding Label}" ButtonTextColor="White" ButtonSize="4" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="3"></nanoXam:CircleButton>--><!--
-                                </StackLayout>-->
-                                <ScrollView>
-                                    <!--<nanoXam:CircleButton HeightRequest="100" Text="{Binding Label}" ButtonTextColor="White" ButtonSize="4" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="3"></nanoXam:CircleButton>-->
-                                    <!--<StackLayout HeightRequest="100" Orientation="Horizontal">
-                                    <Label Text="{Binding Name}" TextColor="Chocolate" FontSize="Medium" FontFamily="Arial" Margin="2,2,2,2"></Label>
-                                        <Label Text="{Binding Number}"  Margin="2,2,2,2"></Label>
-                                    </StackLayout>-->
-                                    <Grid>
-                                        <Grid.RowDefinitions >
-                                            <RowDefinition></RowDefinition>
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition ></ColumnDefinition>
-                                            <ColumnDefinition></ColumnDefinition>
-                                            <ColumnDefinition></ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
-
-                                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" TextColor="Chocolate" FontSize="Medium" FontFamily="Arial" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" ></Label>
-                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Number}" TextColor="Chocolate" FontSize="Medium" FontFamily="Arial" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"></Label>
-                                        <Button Grid.Row="0" Grid.Column="3"  x:Name="EditMachine" Text="Edit" Clicked="EditMachine_Clicked" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"></Button>
-                                    </Grid>
-                                </ScrollView>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+    <!--<ContentPage.Content>
+        <StackLayout>
+            
         </StackLayout>
-    </ContentPage.Content>
+    </ContentPage.Content>-->
 
+    <MasterDetailPage.Master>
+        <local:MasterPage x:Name="masterPage" />
+    </MasterDetailPage.Master>
 
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
 
 
 
@@ -129,4 +96,4 @@
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>-->
-</ContentPage>
+</MasterDetailPage>

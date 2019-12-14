@@ -4,16 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Inventory.Views.View1">
+             x:Class="Inventory.Views.Machine.AddMachine">
   <ContentView.Content>
       <StackLayout>
           <Label Text="Hello Xamarin.Forms!" />
-            <Button 
-              HorizontalOptions="Center" 
-              VerticalOptions="Center" 
-              Text="Click Me"
-              Clicked="Button_Clicked"
-                ></Button>
       </StackLayout>
   </ContentView.Content>
 </ContentView>

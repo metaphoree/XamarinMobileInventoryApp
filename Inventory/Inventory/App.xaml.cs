@@ -9,15 +9,15 @@ namespace Inventory
         public App()
         {
             InitializeComponent();
-            //MainPage = new NavigationPage(new MainPage());
-            MainPage = new TabbedPage
-            {
-                Children ={
-                new MainPage(),
-                new NextPage_2(),
-                new NextPage_3()
-                }
-            };
+            MainPage = new NavigationPage(new MainPage());
+            //MainPage = new TabbedPage
+            //{
+            //    Children ={
+            //    new MainPage(),
+            //    new NextPage_2(),
+            //    new NextPage_3()
+            //    }
+            //};
         }
 
         protected override void OnStart()

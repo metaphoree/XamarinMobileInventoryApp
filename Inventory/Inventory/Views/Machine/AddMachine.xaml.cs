@@ -7,19 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Inventory.Views
+namespace Inventory.Views.Machine
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class View1 : ContentView
+    public partial class AddMachine : ContentView
     {
-        public View1()
+        public AddMachine()
         {
             InitializeComponent();
-        }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-
         }
     }
 }
