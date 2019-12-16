@@ -9,7 +9,7 @@ namespace Inventory
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new MainPage();
             //MainPage = new TabbedPage
             //{
             //    Children ={

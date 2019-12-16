@@ -1,21 +1,32 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Inventory.Dto"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local1="clr-namespace:Inventory.Views.Machine"
+             xmlns:local2="clr-namespace:Inventory.Views.Product"
+             xmlns:local3="clr-namespace:Inventory.Views.Customer"
+             x:Class="Inventory.Views.MasterPage"
              mc:Ignorable="d"
-             x:Class="Inventory.Views.MasterPage">
-  <ContentView.Content>
+             IconImageSource="home11.png"
+             Title="Personal Organiser">
+  <ContentPage.Content>
       <StackLayout>
             <ListView x:Name="listView" x:FieldModifier="public">
                 <ListView.ItemsSource>
                     <x:Array Type="{x:Type local:MasterPageItem}">
-                        <local:MasterPageItem Title="Contacts" IconSource="contacts.png" TargetType="{x:Type local:ContactsPage}" />
-                        <local:MasterPageItem Title="TodoList" IconSource="todo.png" TargetType="{x:Type local:TodoListPage}" />
-                        <local:MasterPageItem Title="Reminders" IconSource="reminders.png" TargetType="{x:Type local:ReminderPage}" />
+                        <local:MasterPageItem Title="Machine" IconSource="machine.png" TargetType="{x:Type local1:MachineMgmt}" />
+                        <local:MasterPageItem Title="Products" IconSource="product.png" TargetType="{x:Type local2:ProductMgmt}" />
+                        <local:MasterPageItem Title="Customers" IconSource="customer.png" TargetType="{x:Type local3:CustomerMgmt}" />
                     </x:Array>
                 </ListView.ItemsSource>
+                <ListView.Header>
+                    <StackLayout Orientation="Horizontal">
+                       <Image Source="machine.png" HeightRequest="50"/>
+                   <Label Grid.Column="1" Text="Menu" />
+                    </StackLayout>
+                </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -32,5 +43,5 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-  </ContentView.Content>
-</ContentView>
+  </ContentPage.Content>
+</ContentPage>

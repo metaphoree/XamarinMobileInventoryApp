@@ -3,14 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
+                  xmlns:local1="clr-namespace:Inventory.Views.Machine"
                   xmlns:local="clr-namespace:Inventory.Views"
                   mc:Ignorable="d"
              x:Class="Inventory.MainPage"
              Title="Page 1" 
              >
     <!--<ContentPage.Content>
-        <StackLayout>
-            
+        <StackLayout>            
         </StackLayout>
     </ContentPage.Content>-->
 
@@ -21,7 +22,7 @@
     <MasterDetailPage.Detail>
         <NavigationPage>
             <x:Arguments>
-                
+                <local1:MachineMgmt />
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>
@@ -47,12 +48,9 @@
                Placeholder="Password" IsPassword="True"></Entry>
 
             <Button Text="Login"
-                    Clicked="Login"
-            ></Button>
-
+                    Clicked="Login"></Button>
             <Label Text="Not a member? Sign up now"
                TextColor="Black"></Label>
-
             <Label Text="Pick a Date" ></Label>
             <DatePicker x:Name="dp" MaximumDate="2099/12/31" MinimumDate="1901/01/01" ></DatePicker>
             <TimePicker x:Name="tp"></TimePicker>
@@ -67,7 +65,6 @@
                     </x:Array>
 
                 </Picker.ItemsSource>
-
             </Picker>
             <Button Text="Get date time"
                     Clicked="DateTime"
@@ -75,7 +72,6 @@
             <Label Text=""
                    x:Name="DateTimeLabel"
                TextColor="Black"></Label>
-
         </StackLayout>
     </StackLayout>-->
     <!--<ContentPage Title="Page 2" IconImageSource="home11.png">

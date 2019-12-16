@@ -11,7 +11,7 @@ using Xamarin.Forms.Xaml;
 namespace Inventory.Views.Machine
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MachineMgmt : ContentView
+    public partial class MachineMgmt : ContentPage
     {
         public MachineMgmt()
         {

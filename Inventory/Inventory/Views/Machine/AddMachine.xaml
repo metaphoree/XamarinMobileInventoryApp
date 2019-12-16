@@ -6,8 +6,13 @@
              mc:Ignorable="d"
              x:Class="Inventory.Views.Machine.AddMachine">
   <ContentView.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
+      <StackLayout Padding="20">
+            <Entry x:Name="MachineName" Placeholder="Machine Name" Text="{Binding Machine.Name, Mode=TwoWay}"></Entry>
+            <Entry x:Name="MachineNumber" Placeholder="Machine Number"  Text="{Binding Machine.Number, Mode=TwoWay}"></Entry>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button x:Name="SaveBtn" Text="Save Machine" Command="{Binding AddMachine}"></Button>
+                <!--<Button x:Name="ShowAllDataBtn" Text="Show Data" Clicked="ShowAllDataBtn_Clicked"></Button>-->
+            </StackLayout>
+        </StackLayout>
   </ContentView.Content>
 </ContentView>

@@ -1,18 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Inventory.Views.Machine.MachineMgmt">
-  <ContentView.Content>
+    <ContentPage.Content>
         <StackLayout Padding="20">
-            <Entry x:Name="MachineName" Placeholder="Machine Name" Text="{Binding Machine.Name, Mode=TwoWay}"></Entry>
-            <Entry x:Name="MachineNumber" Placeholder="Machine Number"  Text="{Binding Machine.Number, Mode=TwoWay}"></Entry>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Button x:Name="SaveBtn" Text="Save Machine" Command="{Binding AddMachine}"></Button>
-                <!--<Button x:Name="ShowAllDataBtn" Text="Show Data" Clicked="ShowAllDataBtn_Clicked"></Button>-->
-            </StackLayout>
             <Label Text="Machine List" FontSize="Large" TextColor="DarkRed" HorizontalOptions="CenterAndExpand"></Label>
             <ListView x:Name="MachineDataList" ItemsSource="{Binding MachineList}">
                 <ListView.ItemTemplate>
@@ -44,7 +38,7 @@
                                         </Grid.ColumnDefinitions>
                                         <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" TextColor="Chocolate" FontSize="Medium" FontFamily="Arial" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" ></Label>
                                         <Label Grid.Row="0" Grid.Column="1" Text="{Binding Number}" TextColor="Chocolate" FontSize="Medium" FontFamily="Arial" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"></Label>
-                                        <Button Grid.Row="0" Grid.Column="3"  x:Name="EditMachine" Text="Edit" Clicked="EditMachine_Clicked" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"></Button>
+                                        <!--<Button Grid.Row="0" Grid.Column="3"  x:Name="EditMachine" Text="Edit" Clicked="EditMachine_Clicked" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"></Button>-->
                                     </Grid>
                                 </ScrollView>
                             </ViewCell.View>
@@ -53,5 +47,5 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-    </ContentView.Content>
-</ContentView>
+    </ContentPage.Content>
+</ContentPage>

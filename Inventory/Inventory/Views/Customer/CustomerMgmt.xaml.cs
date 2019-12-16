@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Inventory.Views
+namespace Inventory.Views.Customer
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MasterPage : ContentPage
+    public partial class CustomerMgmt : ContentPage
     {
-        public MasterPage()
+        public CustomerMgmt()
         {
             InitializeComponent();
         }

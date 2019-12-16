@@ -1,4 +1,5 @@
 ﻿using Inventory.Data;
+using Inventory.Dto;
 using Inventory.Models;
 using Inventory.ViewModels;
 using SQLite;
@@ -15,17 +16,29 @@ namespace Inventory
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class MainPage : ContentPage
+    public partial class MainPage : MasterDetailPage
     {
-        private SQLiteConnection SQLiteConnection;
-        private Machine machine;
         public MainPage()
         {
             InitializeComponent();
+            masterPage.listView.ItemSelected += OnItemSelected;
             //SQLiteConnection = DependencyService.Get<ISQLite>().GetDBConnection();
-           
             //SQLiteConnection.CreateTable<Machine>();
         }
+        void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var item = e.SelectedItem as MasterPageItem;
+            if (item != null)
+            {
+                Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
+                masterPage.listView.SelectedItem = null;
+                IsPresented = false;
+            }
+        }
+
+
+
+        #region OldCode
 
         //private void SaveBtn_Clicked(object sender, EventArgs e)
         //{
@@ -42,7 +55,7 @@ namespace Inventory
         //    var data = (from machine in 
         //                SQLiteConnection.Table<Machine>() 
         //                select machine);
-            
+
         //    DataList.ItemsSource = data;
         //}
 
@@ -62,6 +75,7 @@ namespace Inventory
         //    var tpick = tp.Time;
         //    var pickedValue = MyPicker.SelectedItem.ToString();
         //    DateTimeLabel.Text = dpick.ToString() + tpick.ToString() + pickedValue;
-        //}
+        //} 
+        #endregion
     }
 }
